@@ -629,7 +629,7 @@
 
                     </li>
                   </ul>
-                  <button class="btn btnlightblue mt-3 d-sm-block d-md-none">Quero ver meu filho trabalhando<br>Por
+                  <button class="btn btnlightblue mt-3 d-sm-block d-md-none" id="openPopupBtn2">Quero ver meu filho trabalhando<br>Por
                     apenas R$199,90*</button>
                 </div>
               </div>
@@ -848,6 +848,14 @@
       const openPopupBtn = document.getElementById('openPopupBtn');
       if (openPopupBtn) {
         openPopupBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          document.getElementById('popupForm').style.display = 'block';
+        });
+      }
+      // Adiciona o evento ao segundo botão de CTA
+      const openPopupBtn2 = document.getElementById('openPopupBtn2');
+      if (openPopupBtn2) {
+        openPopupBtn2.addEventListener('click', function (e) {
           e.stopPropagation();
           document.getElementById('popupForm').style.display = 'block';
         });
