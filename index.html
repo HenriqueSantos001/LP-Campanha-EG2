@@ -695,11 +695,9 @@
       }).then(response => response.json())
         .then(data => {
           console.log('Success:', data);
-          window.location.href = '/obrigado/lp-parabens.html';
         })
         .catch(error => {
           console.error('Error:', error);
-          window.location.href = '/obrigado/lp-parabens.html';
         });
 
       // Removido o alert e o fechamento do popup aqui, pois o redirecionamento já ocorre
