@@ -26,9 +26,9 @@
   <meta property="og:type" content="website">
   <meta content="summary_large_image" name="twitter:card">
   <meta content="width=device-width, initial-scale=1" name="viewport">
-  <link href="./css/normalize.css" rel="stylesheet" type="text/css">
-  <link href="./css/components.css" rel="stylesheet" type="text/css">
-  <link href="./css/site-faculdade-hub.css?v=423432" rel="stylesheet" type="text/css">
+  <link href="/css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="/css/components.css" rel="stylesheet" type="text/css">
+  <link href="/css/site-faculdade-hub.css?v=423432" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -68,69 +68,333 @@
                 ao vídeo</span></h2>
 
 
-            <style>
-              .video-wrapper {
-                position: relative;
-                max-width: 430px;
-                margin: 0 auto;
-                border-radius: 20px;
-                overflow: hidden;
-                box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-              }
+<style>
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto 48px auto; /* 40px acima, 48px abaixo */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0,0,0,0.4);
+  background: #000;
+}
+@media (max-width: 700px) {
+  .video-wrapper {
+    margin: 20px auto 20px auto; /* 24px acima, 28px abaixo no mobile */
+  }
+}
 
-              video {
-                width: 100%;
-                margin-top: 15px;
-                margin-bottom: 20px;
-                height: auto;
-                display: block;
-                border-radius: 20px;
-              }
+  .video-wrapper .aspect-16-9 {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #000;
+    position: relative;
+  }
+  .video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: none;
+    display: block;
+    position: absolute;
+    top: 0; left: 0;
+    background: #000;
+  }
+  .video-invisible-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 3;
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn-central-mute {
+    background: #e4032b;
+    color: #fff;
+    padding: 36px 40px 32px 40px;
+    border-radius: 14px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+    border: none;
+    text-align: center;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 260px;
+    cursor: pointer;
+    transition: box-shadow 0.2s, background 0.2s;
+    pointer-events: auto;
+    position: relative;
+  }
+  .btn-central-mute:hover {
+    box-shadow: 0 4px 30px rgba(228, 3, 43, 0.20);
+    background: #b90223;
+  }
+  .btn-central-mute .mute-text-top {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: 0.2px;
+  }
+  .btn-central-mute .mute-icon {
+    width: 55px;
+    margin-bottom: 10px;
+    opacity: 0.96;
+  }
+  .btn-central-mute .mute-text-bottom {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 2px;
+    letter-spacing: 0.2px;
+  }
+  .btn-central-mute.disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  .mute-wait-msg {
+    background: rgba(0,0,0,0.86);
+    color: #fff;
+    padding: 9px 16px;
+    border-radius: 8px;
+    position: absolute;
+    left: 50%; top: 6%;
+    transform: translateX(-50%);
+    font-size: 15px;
+    z-index: 10;
+    font-family: sans-serif;
+    display: none;
+    pointer-events: none;
+  }
+  .btn-reiniciar-video {
+    position: absolute;
+    left: 50%;
+    bottom: 12px;
+    transform: translateX(-50%);
+    background: #e4032b;
+    color: #fff;
+    border: none;
+    border-radius: 22px;
+    padding: 9px 19px;
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: 600;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.09);
+    cursor: pointer;
+    opacity: 0.97;
+    z-index: 5;
+    display: none;
+    transition: background 0.18s, box-shadow 0.2s;
+    min-width: 90px;
+    letter-spacing: 0.2px;
+  }
+  .btn-reiniciar-video:hover {
+    background: #b90223;
+    box-shadow: 0 3px 14px rgba(228, 3, 43, 0.22);
+  }
+  .progress-bar-container {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 9px;
+    background: rgba(0,0,0,0.09);
+    z-index: 10;
+    pointer-events: none;
+    border-radius: 0 0 18px 18px;
+    overflow: hidden;
+  }
+  .progress-bar-inner {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #e4032b 60%, #ffd23c 100%);
+    border-radius: 0 0 18px 18px;
+    transition: width 0.15s linear;
+  }
+  @media (max-width: 1100px) {
+    .video-wrapper {
+      max-width: 100vw;
+    }
+  }
+  @media (max-width: 700px) {
+    .btn-central-mute {
+      min-width: 130px;
+      padding: 18px 10px 13px 10px;
+    }
+    .btn-central-mute .mute-icon {
+      width: 30px;
+    }
+    .btn-central-mute .mute-text-top, .btn-central-mute .mute-text-bottom {
+      font-size: 13px;
+    }
+    .btn-reiniciar-video {
+      font-size: 10px;
+      padding: 4px 9px;
+      bottom: 4px;
+    }
+    .progress-bar-container {
+      height: 5px;
+      border-radius: 0 0 10px 10px;
+    }
+    .progress-bar-inner {
+      border-radius: 0 0 10px 10px;
+    }
+  }
+</style>
 
-              .overlay-button {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background-color: #e4032b;
-                /* Azul */
-                color: white;
-                font-family: sans-serif;
-                font-size: 16px;
-                font-weight: bold;
-                padding: 18px 25px;
-                border-radius: 12px;
-                cursor: pointer;
-                z-index: 2;
-                text-align: center;
-                transition: opacity 0.4s ease, visibility 0.4s ease;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-              }
+<div class="video-wrapper">
+  <div class="aspect-16-9">
+    <div id="player"></div>
+    <div class="video-invisible-overlay" id="ytOverlay">
+      <button class="btn-central-mute" id="btnDesmutar">
+        <span class="mute-text-top">A aula já começou</span>
+        <img class="mute-icon" src="https://cdn-icons-png.flaticon.com/512/727/727240.png" alt="Som Desativado" />
+        <span class="mute-text-bottom">Clique para assistir</span>
+      </button>
+      <button class="btn-reiniciar-video" id="btnReiniciar">
+        Reiniciar vídeo
+      </button>
+      <div class="mute-wait-msg" id="waitMsg">Carregando vídeo... Aguarde</div>
+      <div class="progress-bar-container">
+        <div class="progress-bar-inner" id="progressBar"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
-              .overlay-button.hide {
-                opacity: 0;
-                visibility: hidden;
-              }
+<script>
+  let player;
+  let playerReady = false;
+  const overlay = document.getElementById('ytOverlay');
+  const btn = document.getElementById('btnDesmutar');
+  const btnReiniciar = document.getElementById('btnReiniciar');
+  const waitMsg = document.getElementById('waitMsg');
+  const progressBar = document.getElementById('progressBar');
+  let progressInterval = null;
 
-              .overlay-button img {
-                width: 32px;
-                margin-bottom: 10px;
-              }
-            </style>
+  // Configuração da barrinha VSL: até 75% nos primeiros 60s
+  const FAST_PROGRESS_SEC = 60;
+  const FAST_PROGRESS_PCT = 75;
 
+  function loadYouTubeAPI() {
+    if (!window.YT) {
+      let tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      document.body.appendChild(tag);
+    }
+  }
+  loadYouTubeAPI();
 
-            <script>
-              const video = document.getElementById("videoAula");
-              const overlay = document.querySelector(".overlay-button");
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      videoId: 'FsKvwOg2GBE',
+      playerVars: {
+        autoplay: 1,
+        mute: 1,
+        controls: 0,
+        rel: 0,
+        showinfo: 0,
+        modestbranding: 1,
+        enablejsapi: 1,
+        fs: 1
+      },
+      events: {
+        onReady: function (event) {
+          playerReady = true;
+          btn.classList.remove('disabled');
+          waitMsg.style.display = 'none';
+          event.target.playVideo();
+        }
+      }
+    });
+  }
+  window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
 
-              function ativarSom() {
-                video.muted = false;
-                video.controls = true;
-                video.currentTime = 0;
-                video.play();
-                overlay.classList.add("hide");
-              }
-            </script>
+  btn.classList.add('disabled');
+
+  overlay.addEventListener('click', function(e) {
+    if (
+      e.target !== btn && !btn.contains(e.target) &&
+      e.target !== btnReiniciar && !btnReiniciar.contains(e.target)
+    ) {
+      e.stopPropagation();
+      e.preventDefault();
+    }
+  }, true);
+
+  btn.onclick = function(e) {
+    e.stopPropagation();
+    if (!playerReady || !player) {
+      waitMsg.style.display = 'block';
+      setTimeout(() => { waitMsg.style.display = 'none'; }, 2000);
+      return;
+    }
+    btn.style.display = 'none';
+    btnReiniciar.style.display = 'block';
+    player.seekTo(0);
+    player.unMute();
+    player.setVolume(100);
+    player.playVideo();
+    startProgressBarVSL();
+  };
+
+  btnReiniciar.onclick = function(e) {
+    e.stopPropagation();
+    if (playerReady && player) {
+      player.seekTo(0);
+      player.unMute();
+      player.setVolume(100);
+      player.playVideo();
+      startProgressBarVSL();
+    }
+  };
+
+  function startProgressBarVSL() {
+    if (progressInterval) clearInterval(progressInterval);
+    progressBar.style.width = "0%";
+    let fastPhase = true;
+
+    progressInterval = setInterval(() => {
+      if (player && typeof player.getCurrentTime === "function" && typeof player.getDuration === "function") {
+        let current = player.getCurrentTime();
+        let duration = player.getDuration();
+        if (!duration || duration === 0) duration = 126; // fallback para 2min6seg
+
+        if (fastPhase && current <= FAST_PROGRESS_SEC) {
+          // Fase rápida: barra vai de 0% a 75% nos primeiros 60s
+          let percent = Math.min(FAST_PROGRESS_PCT, (current / FAST_PROGRESS_SEC) * FAST_PROGRESS_PCT);
+          progressBar.style.width = percent + "%";
+          if (percent >= FAST_PROGRESS_PCT || current > FAST_PROGRESS_SEC) {
+            fastPhase = false;
+          }
+        }
+        if (!fastPhase) {
+          // Fase lenta: barra vai de 75% a 100% no restante do vídeo
+          let percent;
+          if (current >= duration) {
+            percent = 100;
+          } else if (current > FAST_PROGRESS_SEC) {
+            percent = FAST_PROGRESS_PCT + ((current - FAST_PROGRESS_SEC) / (duration - FAST_PROGRESS_SEC)) * (100 - FAST_PROGRESS_PCT);
+          } else {
+            percent = (current / FAST_PROGRESS_SEC) * FAST_PROGRESS_PCT;
+          }
+          progressBar.style.width = Math.min(100, percent) + "%";
+          if (percent >= 100 || current >= duration) {
+            clearInterval(progressInterval);
+            progressBar.style.width = "100%";
+          }
+        }
+      }
+    }, 200);
+  }
+</script>
+
 
             <p class="paragraph-30"><strong>Você acaba de dar o primeiro passo para garantir uma vaga no nosso
                 Programa de Empregabilidade Jovem Tecnologico, onde oferecemos emprego garantido — ou devolvemos o valor
