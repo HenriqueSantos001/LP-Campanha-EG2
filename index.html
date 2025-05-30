@@ -193,16 +193,13 @@
 <body class="themebgcolor">
 
   <!-- Botão WhatsApp fixo no canto inferior direito -->
-<a href="https://wa.me/5516992578710?text=Tenho%20interesse%20no%20programa%20de%20emprego%20para%20jovens."
-   class="whatsapp-fixed-btn"
-   title="Entrar em contato pelo WhatsApp"
-   target="_blank"
-   rel="noopener">
-  <span class="whatsapp-icon-bg">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" class="whatsapp-icon" />
-  </span>
-</a>
-
+  <a href="https://wa.me/5516992578710?text=Tenho%20interesse%20no%20programa%20de%20emprego%20para%20jovens."
+    class="whatsapp-fixed-btn" title="Entrar em contato pelo WhatsApp" target="_blank" rel="noopener">
+    <span class="whatsapp-icon-bg">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp"
+        class="whatsapp-icon" />
+    </span>
+  </a>
 
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BHKHC2N" height="0" width="0"
@@ -212,14 +209,16 @@
   <div id="popupForm">
     <button class="close-btn" style="display: flex; justify-content: right;" onclick="closePopup()">×</button>
     <h2>Informe o seu nome e telefone</h2>
-    <form id="demoForm">
+    <form id="demoForm" autocomplete="off">
       <label for="name">Nome:</label>
       <input type="text" id="name" name="name" required>
 
       <label for="whatsapp">Whatsapp:</label>
-      <input type="text" id="whatsapp" name="whatsapp" required>
+      <!-- Só números, maxlength 11, teclado numérico, não aceita letras nem colar letras -->
+      <input type="tel" id="whatsapp" name="whatsapp" pattern="[0-9]{10,11}" inputmode="numeric" maxlength="11" required
+        oninput="this.value = this.value.replace(/[^0-9]/g,'');" placeholder="DDD + número" />
 
-      <button type="button" onclick="sendData()">Enviar</button>
+      <button type="submit">Enviar</button>
     </form>
   </div>
 
@@ -248,29 +247,22 @@
       <div class="row">
         <div class="col-md-12">
           <div class="bannercntSec">
-
             <div class="bannercnt">
-
               <section class="secao-principal">
                 <div class="container-principal">
                   <h1 class="titulo">Seu Filho no Primeiro Emprego Tech<span class="textbluecolor"> <br> ou Seu Dinheiro
                       de
                       Volta</span></h1>
-
                   <p class="texto-descritivo">
                     O PROGRAMA DE EMPREGABILIDADE <BR> MAIS DIRETO E EFICAZ DE RIBEIRÃO <br>
                     COM APOIO DE EMPRESAS DE TECNOLOGIA <br>
                     E MENTORIA COMPLETA ATÉ A CONTRATAÇÃO <br>
                   </p>
-
-
                 </div>
               </section>
-
               <div class="bannerbtn d-block d-sm-block d-md-none d-lg-none d-xl-block">
-                <button class="btn-quadrado-animado" id="openPopupBtn" >GARANTA AGORA <br> A MATRÍCULA DO SEU
+                <button class="btn-quadrado-animado" id="openPopupBtn">GARANTA AGORA <br> A MATRÍCULA DO SEU
                   FILHO</button>
-
               </div>
             </div>
           </div>
@@ -284,7 +276,6 @@
       <h2 style="color: rgb(0, 0, 0); font-size: 28px; text-align: center; margin-bottom: 30px;">
         DEPOIMENTOS DE CLIENTES<br>DA SANTOS TECH
       </h2>
-
       <div id="video-wrapper" style="display: flex; flex-direction: column; gap: 40px;">
         <!-- Todos os vídeos com lazy loading -->
         <div class="video-box lazy" data-index="0" data-id="0J2Vl2hlOA8"
@@ -567,9 +558,6 @@
     }
   </script>
 
-
-
-
   <!-- Top sellers -->
   <div class="TopsellerSec pt-5 mt-3">
     <div class="container">
@@ -586,13 +574,11 @@
                       <div class="seller">
                         <div class="sellerLeft">
                           <div class="sellcount">1</div>
-
                           <div class="sellertitlepr">
                             <h2>Parcerias com empresas que contratam direto da nossa escola</h2>
 
                           </div>
                         </div>
-
                       </div>
 
                       <div class="seller">
@@ -642,10 +628,7 @@
 
                           </div>
                         </div>
-
                       </div>
-
-
                     </li>
 
                     <li>
@@ -658,14 +641,12 @@
 
                 </div>
               </div>
-
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
 
   <!-- Footer -->
   <footer>
@@ -677,10 +658,8 @@
               <a href="#" class="footlogo"><img class="img-fluid" src="img/cryptonlogo.svg" alt="img"></a>
               <p>© Copyright 2025 <br> Todos os direitos reservados. </p>
             </div>
-
           </div>
         </div>
-
       </div>
     </div>
   </footer>
@@ -697,43 +676,13 @@
   <script src="https://kit.fontawesome.com/c7d2131b9d.js" crossorigin="anonymous"></script>
 
   <script>
-    // Function to send form data as JSON
-    function sendData() {
-      const form = document.getElementById('demoForm');
-      const formData = {
-        name: form.name.value,
-        whatsapp: form.whatsapp.value,
-      };
-
-      console.log('Form Data:', JSON.stringify(formData));
-
-      fetch('https://leads-cpg-sg1.styxx.cloud/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      }).then(response => response.json())
-        .then(data => {
-          console.log('Success:', data);
-          window.location.href = '/obrigado/lp-parabens.html';
-        })
-        .catch(error => {
-          console.error('Error:', error);
-          window.location.href = '/obrigado/lp-parabens.html';
-        });
-
-      // Removido o alert e o fechamento do popup aqui, pois o redirecionamento já ocorre
-    }
-
+    // Fecha o popup (usado no botão "fechar")
     function closePopup() {
       document.getElementById('popupForm').style.display = 'none';
     }
 
-    // Exibe o popup apenas ao clicar no botão específico
+    // Exibe o popup apenas ao clicar nos botões específicos
     document.addEventListener('DOMContentLoaded', () => {
-      // Remove o listener global para todos os botões
-      // Adiciona apenas ao botão correto
       const openPopupBtn = document.getElementById('openPopupBtn');
       if (openPopupBtn) {
         openPopupBtn.addEventListener('click', function (e) {
@@ -741,7 +690,7 @@
           document.getElementById('popupForm').style.display = 'block';
         });
       }
-      // Adiciona o evento ao segundo botão de CTA
+      // Evento para o segundo botão de CTA (caso exista)
       const openPopupBtn2 = document.getElementById('openPopupBtn2');
       if (openPopupBtn2) {
         openPopupBtn2.addEventListener('click', function (e) {
@@ -751,8 +700,59 @@
       }
     });
 
-    // Remove qualquer listener que feche o popup ao clicar fora dele
-    // Nenhuma ação adicional é necessária pois o popup não fecha mais ao clicar fora
+    // *** IMPORTANTE: ***
+    // O envio do formulário (function sendData) deve ser feito APENAS com o novo código do Google Sheets!
+    // Não deixe mais nada aqui além do controle do popup.
+  </script>
+
+  <script>
+    // Função de abrir/fechar popup
+    function closePopup() {
+      document.getElementById('popupForm').style.display = 'none';
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      ['openPopupBtn', 'openPopupBtn2'].forEach(function (btnId) {
+        const btn = document.getElementById(btnId);
+        if (btn) {
+          btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            document.getElementById('popupForm').style.display = 'block';
+          });
+        }
+      });
+    });
+
+    // Envio do formulário para o Google Sheets e redirecionamento para WhatsApp
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxHg8dYymarhjXCOaJuBVFNHjxsiR82kT7l8TD_gmF-H214SlYnnmi-JmUSMfQ6j188/exec';
+    document.getElementById('demoForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Força só números (defesa dupla)
+      const name = document.getElementById('name').value.trim();
+      let whatsapp = document.getElementById('whatsapp').value.replace(/[^0-9]/g, '');
+      if (whatsapp.length < 10) {
+        alert('Digite um número de WhatsApp válido (com DDD).');
+        return;
+      }
+
+      // Prepara e envia para Google Sheets
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('whatsapp', whatsapp);
+
+      fetch(scriptURL, { method: 'POST', body: formData })
+        .then(response => {
+          // Após salvar, redireciona para o WhatsApp da escola
+          const phoneNumber = '5516992578710';
+          const mensagem = encodeURIComponent('Tenho interesse no curso + programa de emprego para jovens');
+          window.location.href = `https://wa.me/${phoneNumber}?text=${mensagem}`;
+        })
+
+        .catch(error => {
+          alert('Erro ao enviar. Tente novamente!');
+          console.error('Erro:', error);
+        });
+    });
   </script>
 
 </body>
