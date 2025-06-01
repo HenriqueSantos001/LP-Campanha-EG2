@@ -159,7 +159,7 @@
       width: 100%;
       max-width: 100%;
       box-sizing: border-box;
-      font-size: 14px;
+      font-size: 16px !important;
     }
 
     #leadForm {
@@ -173,6 +173,11 @@
       font-style: normal;
       font-display: swap;
     }
+
+    .logo {
+      max-width: 100%;
+      height: auto;
+    }
   </style>
 </head>
 
@@ -183,9 +188,9 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <header style="text-align: center; padding: 20px 0;">
-    <img src="./img/sgpreto.svg" alt="Logo Santos Tech" width="180" height="60" style="max-width: 100%; height: auto;">
-
+    <img src="./img/sgpreto.svg" alt="Logo Santos Tech" class="logo" width="180" height="60">
   </header>
+
 
   <main>
     <section class="hero">
@@ -426,12 +431,12 @@
         <label for="name" style="align-self: flex-start; font-weight: bold;">Nome</label>
         <input id="name" name="name" type="text" required placeholder="Ex: Ana Maria" maxlength="62"
           title="Somente letras, espaços e acentos." oninput="this.value = this.value.replace(/[0-9]/g, '')"
-          style="width:100%; max-width: 320px; padding:12px; margin-bottom:18px; border:1px solid #ccc; border-radius:8px;">
+          style="font-size: 16px; width:100%; max-width: 320px; padding:12px; margin-bottom:18px; border:1px solid #ccc; border-radius:8px;">
 
         <label for="whatsapp" style="align-self: flex-start; font-weight: bold;">Telefone</label>
         <input id="whatsapp" name="whatsapp" type="tel" required placeholder="Ex: 16999999999" maxlength="11"
           pattern="\d{11}" inputmode="numeric" title="Digite apenas 11 números (DDD + telefone)."
-          style="width:100%; max-width: 320px; padding:12px; margin-bottom:24px; border:1px solid #ccc; border-radius:8px;">
+          style="font-size: 16px; width:100%; max-width: 320px; padding:12px; margin-bottom:24px; border:1px solid #ccc; border-radius:8px;">
 
         <button type="submit" class="btn-form"
           style="width:100%; max-width: 320px; padding:14px; background:#25D366; border:none; color:white; font-size:16px; font-weight:bold; cursor:pointer; border-radius:8px;">
