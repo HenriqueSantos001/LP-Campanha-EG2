@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
@@ -12,749 +12,459 @@
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-5BHKHC2N');</script>
   <!-- End Google Tag Manager -->
-  <title>Santos Tech - EMPREGO GARANTIDO</title>
-  <meta charset="utf-8">
-  <meta name="Googlebot-News" content="noindex, nofollow">
-  <meta name="googlebot" content="noindex, nofollow">
-  <meta name="robots" content="noimageindex">
-  <meta name="robots" content="noindex, nofollow">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" media="all" href="./css/bootstrap.min.css">
-  <link rel="stylesheet" media="all" href="./css/slick.css">
-  <link rel="stylesheet" media="all" href="./css/slick-theme.css">
-  <link rel="stylesheet" media="all" href="./css/style.css">
-
-  <meta name="theme-color" content="#sdfsf">
-
-  <link rel="stylesheet" href="./css/style2.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emprego Tech Garantido | Santos Tech</title>
+  <meta name="description"
+    content="Empregabilidade garantida para jovens: curso com apoio de empresas, mentorias e garantia de contratação ou reembolso.">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
   <style>
-    .testimonial-container-unique99 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      width: 80%;
-      max-width: 400px;
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      margin: 20px auto;
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      }
+
+      70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+      }
+
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
     }
 
-    .testimonial-unique99 {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      padding: 10px;
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #fff;
+      color: #111;
+      line-height: 1.5;
     }
 
-    .testimonial-unique99.active {
-      display: flex;
+    header,
+    footer {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+      text-align: center;
+      padding: 1em;
     }
 
-    .testimonial-video-unique99 {
-      width: 100%;
-      border-radius: 10px 10px 0 0;
-    }
-
-    .testimonial-info-unique99 {
-      margin-top: 10px;
+    .hero {
+      padding: 2em 1em;
       text-align: center;
     }
 
-    .nav-button-unique99 {
-      background-color: white;
-      border: 1px solid #ccc;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 18px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 2;
+    .hero-title {
+      font-size: 2.2em;
+      font-family: 'Anton', sans-serif;
+      font-weight: 400;
+      margin-bottom: 0.5em;
     }
 
-    .nav-button-unique99.left-unique99 {
-      left: 15px;
+    .hero p {
+      max-width: 320px;
+      margin: 0 auto 1em;
     }
 
-    .nav-button-unique99.right-unique99 {
-      right: 15px;
+    .btn {
+    background: radial-gradient(circle at center, #ff0033 0%, #c40028 100%);
+    box-shadow: 0 0 12px rgba(255, 0, 0, 0.5);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+    .section-title {
+      font-size: 1.2em;
+      margin: 2em 0 1em;
+      text-align: center;
     }
 
-    .control-button-unique99 {
-      background-color: rgba(50, 110, 189, 1);
-      border: 1px solid #ccc;
-      border-radius: 50%;
-      width: 80px;
-      height: 80px;
-      font-size: 18px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      margin-top: 10px;
-      position: absolute;
-      bottom: 110px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
+    .videos {
+      display: grid;
+      gap: 1em;
+      padding: 0 1em;
     }
 
-    .progress-bar-unique99 {
+    .video-card iframe {
       width: 100%;
-      height: 5px;
-      background-color: #ccc;
-      position: relative;
-      cursor: pointer;
-    }
-
-    .progress-filled-unique99 {
-      height: 100%;
-      background-color: #2196F3;
-      width: 0;
-    }
-
-    /* Minimalistic style for the popup */
-    #popupForm {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: #d9d9d9;
-      padding: 20px;
+      height: 215px;
+      border: none;
       border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
-      width: 90%;
-      max-width: 400px;
     }
 
-    #popupForm h2 {
-      margin-bottom: 15px;
-      font-size: 20px;
-      color: #333;
+    .benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 320px;
+}
+
+    .benefits li {
+  padding: 0.7em 0;
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+}
+
+    .cta {
       text-align: center;
+      margin: 2em 0;
     }
 
-    #popupForm label {
-      font-size: 14px;
-      color: #000000;
-      margin-bottom: 5px;
-      display: block;
-    }
-
-    #popupForm input {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 14px;
-    }
-
-    #popupForm button {
-      width: 100%;
-      padding: 10px;
-      background-color: #2bc016;
-      color: white;
+    .whatsapp-btn {
+      position: fixed;
+      right: 15px;
+      bottom: 15px;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg') no-repeat center center / 70% #25D366;
       border: none;
-      border-radius: 4px;
-      font-size: 16px;
-      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      animation: pulse 2s infinite;
     }
 
-    #popupForm .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: none;
-      border: none;
-      font-size: 18px;
+    .subheadline {
       font-weight: bold;
-      color: #333;
-      cursor: pointer;
-      align-items: right;
-      justify-content: right;
+      font-size: 1.15em;
+      /* opcional, se quiser dar uma leve destacada */
     }
-  </style>
 
+    .btn-form {
+    background: #25D366;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 12px;
+    width: 100%;
+    border-radius: 6px;
+  }
+
+  #leadForm input {
+    display: block;
+    margin: 0 auto 15px auto;
+    padding: 10px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+
+  #leadForm {
+    text-align: center;
+  }
+
+  </style>
 </head>
 
-<body class="themebgcolor">
-
-  <!-- Botão WhatsApp fixo no canto inferior direito -->
-  <a href="https://wa.me/5516992578710?text=Tenho%20interesse%20no%20programa%20de%20emprego%20para%20jovens."
-    class="whatsapp-fixed-btn" title="Entrar em contato pelo WhatsApp" target="_blank" rel="noopener">
-    <span class="whatsapp-icon-bg">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp"
-        class="whatsapp-icon" />
-    </span>
-  </a>
-
+<body>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BHKHC2N" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <div id="popupForm">
-    <button class="close-btn" style="display: flex; justify-content: right;" onclick="closePopup()">×</button>
-    <h2>Informe o seu nome e telefone</h2>
-    <form id="demoForm" autocomplete="off">
-      <label for="name">Nome:</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="whatsapp">Whatsapp:</label>
-      <!-- Só números, maxlength 11, teclado numérico, não aceita letras nem colar letras -->
-      <input type="tel" id="whatsapp" name="whatsapp" pattern="[0-9]{10,11}" inputmode="numeric" maxlength="11" required
-        oninput="this.value = this.value.replace(/[^0-9]/g,'');" placeholder="DDD + número" />
-
-      <button type="submit">Enviar</button>
-    </form>
-  </div>
-
-  <div class="circlebg1"><img class="img-fluid" src="img/circlebg19.svg" alt="img"></div>
-  <div class="circlebg2"><img class="img-fluid" src="img/circlebg20-2.svg" alt="img"></div>
-  <div class="circlebg3"><img class="img-fluid" src="img/circlebg21.svg" alt="img"></div>
-
-  <!-- header -->
-  <header>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="logo"><a href="index.html"><img class="img-fluid" src="img/logo-santostech2.svg" alt="img"></a>
-          </div>
-
-
-        </div>
-      </div>
-    </div>
+  <header style="text-align: center; padding: 20px 0;">
+    <img src="./img/sgpreto.svg" alt="Logo Santos Tech" width="180" height="auto" style="max-width: 100%; height: auto;">
   </header>
+  
 
-  <!-- banner sec -->
-  <div class="bannerSec">
+  <main>
+    <section class="hero">
+      <h1 class="hero-title">SEU FILHO NO PRIMEIRO <br> EMPREGO TECH <br><span style="color:#d9002c">OU SEU DINHEIRO DE
+          VOLTA</span></h1>
+      <p class="subheadline">
+        <span style="color:#d9002c;">Mais que um curso:</span> o caminho mais rápido para o primeiro emprego em
+        tecnologia, direto de Ribeirão Preto.
+      </p>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="bannercntSec">
-            <div class="bannercnt">
-              <section class="secao-principal">
-                <div class="container-principal">
-                  <h1 class="titulo">Seu Filho no Primeiro Emprego Tech<span class="textbluecolor"> <br> ou Seu Dinheiro
-                      de
-                      Volta</span></h1>
-                  <p class="texto-descritivo">
-                    O PROGRAMA DE EMPREGABILIDADE <BR> MAIS DIRETO E EFICAZ DE RIBEIRÃO <br>
-                    COM APOIO DE EMPRESAS DE TECNOLOGIA <br>
-                    E MENTORIA COMPLETA ATÉ A CONTRATAÇÃO <br>
-                  </p>
-                </div>
-              </section>
-              <div class="bannerbtn d-block d-sm-block d-md-none d-lg-none d-xl-block">
-                <button class="btn-quadrado-animado" id="openPopupBtn">GARANTA AGORA <br> A MATRÍCULA DO SEU
-                  FILHO</button>
-              </div>
-            </div>
-          </div>
+      <a href="https://api.whatsapp.com/send?phone=5516992578710" class="btn">GARANTA AGORA <br> A MATRÍCULA DO SEU
+        FILHO</a>
+    </section>
+
+    <section style="background-color: #ffffff; padding: 5px 20px;">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <h2 style="color: rgb(0, 0, 0); font-size: 28px; text-align: center; margin-top: -0.4em; margin-bottom: 30px;">
+          Veja o que os pais dizem <br> sobre a transformação <br> dos seus filhos
+        </h2>
+        <div id="video-wrapper" style="display: flex; flex-direction: column; gap: 40px;">
+          <!-- Todos os vídeos com lazy loading -->
+          <!-- Este bloco será duplicado com index e ID únicos -->
+          <!-- Os dados de vídeo estão no array abaixo -->
+          <!-- Inseriremos dinamicamente os blocos -->
         </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <section style="background-color: #ffffff; padding: 5px 20px;">
-    <div style="max-width: 1200px; margin: 0 auto;">
-      <h2 style="color: rgb(0, 0, 0); font-size: 28px; text-align: center; margin-bottom: 30px;">
-        DEPOIMENTOS DE CLIENTES<br>DA SANTOS TECH
-      </h2>
-      <div id="video-wrapper" style="display: flex; flex-direction: column; gap: 40px;">
-        <!-- Todos os vídeos com lazy loading -->
-        <div class="video-box lazy" data-index="0" data-id="0J2Vl2hlOA8"
-          style="position: relative; padding-bottom: 56.25%; height: 0; border-radius: 12px; overflow: hidden; background-color: black; box-shadow: 0 0 15px rgba(0,0,0,0.2); cursor: pointer;">
-          <img src="https://img.youtube.com/vi/0J2Vl2hlOA8/maxresdefault.jpg" onclick="loadLazyVideo(0)"
-            style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;">
-          <div onclick="loadLazyVideo(0)"
-            style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2;">
-            <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
-              <circle cx="36" cy="36" r="36" fill="#FF0000" />
-              <polygon points="28,22 28,50 52,36" fill="white" />
-            </svg>
-          </div>
-          <div
-            style="position: absolute; left: 0; right: 0; bottom: 15px; display: flex; justify-content: center; z-index: 10;">
-            <button onclick="loadLazyVideo(0)"
-              style="background: #000; color: #ffffff; border: none; border-radius: 0; padding: 10px 48px; min-width: 220px; cursor: pointer; font-size: 16px;">Assistir
-              agora</button>
-          </div>
-        </div>
-        <div class="video-box lazy" data-index="1" data-id="fDcA05k9ywM"
-          style="position: relative; padding-bottom: 56.25%; height: 0; border-radius: 12px; overflow: hidden; background-color: black; box-shadow: 0 0 15px rgba(0,0,0,0.2); cursor: pointer;">
-          <img src="https://img.youtube.com/vi/fDcA05k9ywM/maxresdefault.jpg" onclick="loadLazyVideo(1)"
-            style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;">
-          <div onclick="loadLazyVideo(1)"
-            style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2;">
-            <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
-              <circle cx="36" cy="36" r="36" fill="#FF0000" />
-              <polygon points="28,22 28,50 52,36" fill="white" />
-            </svg>
-          </div>
-          <div
-            style="position: absolute; left: 0; right: 0; bottom: 15px; display: flex; justify-content: center; z-index: 10;">
-            <button onclick="loadLazyVideo(1)"
-              style="background: #000; color: #ffffff; border: none; border-radius: 0; padding: 10px 48px; min-width: 220px; cursor: pointer; font-size: 16px;">Assistir
-              agora</button>
-          </div>
-        </div>
-        <div class="video-box lazy" data-index="2" data-id="pDM21duy0uQ"
-          style="position: relative; padding-bottom: 56.25%; height: 0; border-radius: 12px; overflow: hidden; background-color: black; box-shadow: 0 0 15px rgba(0,0,0,0.2); cursor: pointer;">
-          <img src="https://img.youtube.com/vi/pDM21duy0uQ/maxresdefault.jpg" onclick="loadLazyVideo(2)"
-            style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;">
-          <div onclick="loadLazyVideo(2)"
-            style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2;">
-            <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
-              <circle cx="36" cy="36" r="36" fill="#FF0000" />
-              <polygon points="28,22 28,50 52,36" fill="white" />
-            </svg>
-          </div>
-          <div
-            style="position: absolute; left: 0; right: 0; bottom: 15px; display: flex; justify-content: center; z-index: 10;">
-            <button onclick="loadLazyVideo(2)"
-              style="background: #000; color: #ffffff; border: none; border-radius: 0; padding: 10px 48px; min-width: 220px; cursor: pointer; font-size: 16px;">Assistir
-              agora</button>
-          </div>
-        </div>
-        <div class="video-box lazy" data-index="3" data-id="9Aq5-IIvDVg"
-          style="position: relative; padding-bottom: 56.25%; height: 0; border-radius: 12px; overflow: hidden; background-color: black; box-shadow: 0 0 15px rgba(0,0,0,0.2); cursor: pointer;">
-          <img src="https://img.youtube.com/vi/9Aq5-IIvDVg/maxresdefault.jpg" onclick="loadLazyVideo(3)"
-            style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;">
-          <div onclick="loadLazyVideo(3)"
-            style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2;">
-            <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
-              <circle cx="36" cy="36" r="36" fill="#FF0000" />
-              <polygon points="28,22 28,50 52,36" fill="white" />
-            </svg>
-          </div>
-          <div
-            style="position: absolute; left: 0; right: 0; bottom: 15px; display: flex; justify-content: center; z-index: 10;">
-            <button onclick="loadLazyVideo(3)"
-              style="background: #000; color: #ffffff; border: none; border-radius: 0; padding: 10px 48px; min-width: 220px; cursor: pointer; font-size: 16px;">Assistir
-              agora</button>
-          </div>
-        </div>
-        <div class="video-box lazy" data-index="4" data-id="dHgHQENMamQ"
-          style="position: relative; padding-bottom: 56.25%; height: 0; border-radius: 12px; overflow: hidden; background-color: black; box-shadow: 0 0 15px rgba(0,0,0,0.2); cursor: pointer;">
-          <img src="https://img.youtube.com/vi/dHgHQENMamQ/maxresdefault.jpg" onclick="loadLazyVideo(4)"
-            style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;">
-          <div onclick="loadLazyVideo(4)"
-            style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2;">
-            <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
-              <circle cx="36" cy="36" r="36" fill="#FF0000" />
-              <polygon points="28,22 28,50 52,36" fill="white" />
-            </svg>
-          </div>
-          <div
-            style="position: absolute; left: 0; right: 0; bottom: 15px; display: flex; justify-content: center; z-index: 10;">
-            <button onclick="loadLazyVideo(4)"
-              style="background: #000; color: #ffffff; border: none; border-radius: 0; padding: 10px 48px; min-width: 220px; cursor: pointer; font-size: 16px;">Assistir
-              agora</button>
-          </div>
-        </div>
-        <div class="video-box lazy" data-index="5" data-id="ysNRtA4zBxg"
-          style="position: relative; padding-bottom: 56.25%; height: 0; border-radius: 12px; overflow: hidden; background-color: black; box-shadow: 0 0 15px rgba(0,0,0,0.2); cursor: pointer;">
-          <img src="https://img.youtube.com/vi/ysNRtA4zBxg/maxresdefault.jpg" onclick="loadLazyVideo(5)"
-            style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;">
-          <div onclick="loadLazyVideo(5)"
-            style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2;">
-            <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
-              <circle cx="36" cy="36" r="36" fill="#FF0000" />
-              <polygon points="28,22 28,50 52,36" fill="white" />
-            </svg>
-          </div>
-          <div
-            style="position: absolute; left: 0; right: 0; bottom: 15px; display: flex; justify-content: center; z-index: 10;">
-            <button onclick="loadLazyVideo(5)"
-              style="background: #000; color: #ffffff; border: none; border-radius: 0; padding: 10px 48px; min-width: 220px; cursor: pointer; font-size: 16px;">Assistir
-              agora</button>
-          </div>
-        </div>
-        <div class="video-box lazy" data-index="6" data-id="v2ArrmkxohM"
-          style="position: relative; padding-bottom: 56.25%; height: 0; border-radius: 12px; overflow: hidden; background-color: black; box-shadow: 0 0 15px rgba(0,0,0,0.2); cursor: pointer;">
-          <img src="https://img.youtube.com/vi/v2ArrmkxohM/maxresdefault.jpg" onclick="loadLazyVideo(6)"
-            style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;">
-          <div onclick="loadLazyVideo(6)"
-            style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2;">
-            <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
-              <circle cx="36" cy="36" r="36" fill="#FF0000" />
-              <polygon points="28,22 28,50 52,36" fill="white" />
-            </svg>
-          </div>
-          <div
-            style="position: absolute; left: 0; right: 0; bottom: 15px; display: flex; justify-content: center; z-index: 10;">
-            <button onclick="loadLazyVideo(6)"
-              style="background: #000; color: #ffffff; border: none; border-radius: 0; padding: 10px 48px; min-width: 220px; cursor: pointer; font-size: 16px;">Assistir
-              agora</button>
-          </div>
-        </div>
+    <script async src="https://www.youtube.com/iframe_api"></script>
+    <script>
+      const videoIds = [
+        '0J2Vl2hlOA8',
+        'fDcA05k9ywM',
+        'pDM21duy0uQ',
+        '9Aq5-IIvDVg',
+        'dHgHQENMamQ',
+        'ysNRtA4zBxg',
+        'v2ArrmkxohM'
+      ];
+      const players = {}, replayStates = {}, firstPlay = {};
+      const wrapper = document.getElementById("video-wrapper");
+
+      videoIds.forEach((id, index) => {
+        const div = document.createElement('div');
+        div.className = "video-box lazy";
+        div.dataset.index = index;
+        div.dataset.id = id;
+        div.style = "position: relative; padding-bottom: 56.25%; height: 0; border-radius: 12px; overflow: hidden; background-color: black; box-shadow: 0 0 15px rgba(0,0,0,0.2); cursor: pointer;";
+        div.innerHTML = `
+      <img src="https://img.youtube.com/vi/${id}/maxresdefault.jpg" onclick="loadLazyVideo(${index})"
+        style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;" alt="Depoimento ${index + 1}">
+      <div onclick="loadLazyVideo(${index})"
+        style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2;">
+        <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+          <circle cx="36" cy="36" r="36" fill="#FF0000" />
+          <polygon points="28,22 28,50 52,36" fill="white" />
+        </svg>
       </div>
-    </div>
-  </section>
-
-  <script src="https://www.youtube.com/iframe_api"></script>
-  <script>
-    const videoIds = [
-      '0J2Vl2hlOA8',
-      'fDcA05k9ywM',
-      'pDM21duy0uQ',
-      '9Aq5-IIvDVg',
-      'dHgHQENMamQ',
-      'ysNRtA4zBxg',
-      'v2ArrmkxohM'
-    ];
-
-    const players = {};
-    const replayStates = {};
-    const firstPlay = {};
-
-    function showReplayButton(index) {
-      const container = document.querySelector(`.video-box.lazy[data-index="${index}"]`);
-      if (!container) return;
-      if (container.querySelector('.replay-btn-wrapper')) return;
-
-      const wrapper = document.createElement('div');
-      wrapper.className = 'replay-btn-wrapper';
-      wrapper.style = 'position: absolute; left: 0; right: 0; bottom: 15px; display: flex; justify-content: center; z-index: 1002;';
-
-      const btn = document.createElement('button');
-      btn.innerHTML = '🔁 Repetir vídeo';
-      btn.style = 'background: #000; color: #FFFFFF; border: none; border-radius: 0; padding: 10px 48px; min-width: 220px; cursor: pointer; font-size: 16px; position: relative; z-index: 1002;';
-      btn.onclick = function (e) {
-        e.stopPropagation();
-        if (players[index]) {
-          players[index].seekTo(0);
-          players[index].playVideo();
-          btn.remove();
-          replayStates[index] = false;
-        }
-      };
-      wrapper.appendChild(btn);
-      container.appendChild(wrapper);
-      replayStates[index] = true;
-    }
-
-    function removeReplayButton(index) {
-      const container = document.querySelector(`.video-box.lazy[data-index="${index}"]`);
-      if (!container) return;
-      const btn = container.querySelector('.replay-btn-wrapper');
-      if (btn) btn.remove();
-      replayStates[index] = false;
-    }
-
-    function pauseAllExcept(currentIndex) {
-      Object.keys(players).forEach(i => {
-        if (i != currentIndex && players[i] && typeof players[i].pauseVideo === 'function') {
-          players[i].pauseVideo();
-          removeReplayButton(i);
-        }
+      <div style="position: absolute; left: 0; right: 0; bottom: 15px; display: flex; justify-content: center; z-index: 10;">
+        <button onclick="loadLazyVideo(${index})"
+          style="background: #000; color: #ffffff; border: none; border-radius: 0; padding: 10px 48px; min-width: 220px; cursor: pointer; font-size: 16px;">Assistir agora</button>
+      </div>
+    `;
+        wrapper.appendChild(div);
       });
-    }
 
-    function loadLazyVideo(index) {
-      pauseAllExcept(String(index));
+      function showReplayButton(index) {
+        const container = document.querySelector(`.video-box.lazy[data-index="${index}"]`);
+        if (!container || container.querySelector('.replay-btn-wrapper')) return;
+        const wrapper = document.createElement('div');
+        wrapper.className = 'replay-btn-wrapper';
+        wrapper.style = 'position: absolute; left: 0; right: 0; bottom: 15px; display: flex; justify-content: center; z-index: 1002;';
+        const btn = document.createElement('button');
+        btn.innerHTML = '🔁 Repetir vídeo';
+        btn.setAttribute('aria-label', 'Repetir vídeo');
+        btn.style = 'background: #000; color: #FFFFFF; border: none; border-radius: 0; padding: 10px 48px; min-width: 220px; cursor: pointer; font-size: 16px; position: relative; z-index: 1002;';
+        btn.onclick = function (e) {
+          e.stopPropagation();
+          if (players[index]) {
+            players[index].seekTo(0);
+            players[index].playVideo();
+            btn.remove();
+            replayStates[index] = false;
+          }
+        };
+        wrapper.appendChild(btn);
+        container.appendChild(wrapper);
+        replayStates[index] = true;
+      }
 
-      const container = document.querySelector(`.video-box.lazy[data-index="${index}"]`);
-      const videoId = container.getAttribute('data-id');
-      if (container && !players[index]) {
-        container.innerHTML = `
-          <div id="player${index}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
-          <div class="unmute-btn-wrapper" style="position: absolute; left: 0; right: 0; bottom: 15px; display: flex; justify-content: center; z-index: 10;"></div>
-          <div class="blocker-overlay" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.15); z-index: 999; pointer-events: auto;"></div>
-        `;
-        setTimeout(() => {
-          players[index] = new YT.Player(`player${index}`, {
-            videoId: videoId,
-            playerVars: {
-              autoplay: 1,
-              mute: 1,
-              rel: 0,
-              modestbranding: 1,
-              controls: 1,
-              playsinline: 1
-            },
-            events: {
-              onReady: (event) => {
-                const unmuteBtn = document.createElement('button');
-                unmuteBtn.textContent = '🔊 Ativar som';
-                unmuteBtn.style = 'background: #000; color: #FFFFFF; border: none; border-radius: 0; padding: 10px 48px; min-width: 220px; cursor: pointer; font-size: 16px; position: relative; z-index: 1001;';
-                let isMuted = true;
-                unmuteBtn.onclick = (e) => {
-                  e.stopPropagation();
-                  if (isMuted) {
-                    event.target.unMute();
-                    event.target.seekTo(0);
-                    event.target.playVideo();
-                    unmuteBtn.textContent = '🔇 Desativar som';
-                    unmuteBtn.style.color = '#FF0000'; // vermelho
-                  } else {
-                    event.target.mute();
-                    unmuteBtn.textContent = '🔊 Ativar som';
-                    unmuteBtn.style.color = '#FFFFFF'; // branco
-                  }
-                  isMuted = !isMuted;
-                };
-                const wrapper = container.querySelector('.unmute-btn-wrapper');
-                if (wrapper) {
-                  wrapper.appendChild(unmuteBtn);
-                }
-                const blocker = container.querySelector('.blocker-overlay');
-                if (blocker && wrapper && unmuteBtn) {
-                  unmuteBtn.style.position = 'relative';
-                  unmuteBtn.style.zIndex = '1001';
-                  blocker.style.pointerEvents = 'auto';
-                  wrapper.style.zIndex = '1001';
-                  unmuteBtn.addEventListener('click', function (e) {
-                    e.stopPropagation();
-                  });
-                  blocker.addEventListener('click', function (e) {
-                    e.stopPropagation();
-                  });
-                }
-                event.target.playVideo();
-                // Marca que o vídeo já foi iniciado pelo usuário
-                firstPlay[index] = true;
+      function removeReplayButton(index) {
+        const container = document.querySelector(`.video-box.lazy[data-index="${index}"]`);
+        if (!container) return;
+        const btn = container.querySelector('.replay-btn-wrapper');
+        if (btn) btn.remove();
+        replayStates[index] = false;
+      }
+
+      function pauseAllExcept(currentIndex) {
+        Object.keys(players).forEach(i => {
+          if (i != currentIndex && players[i]?.pauseVideo) {
+            players[i].pauseVideo();
+            removeReplayButton(i);
+          }
+        });
+      }
+
+      function loadLazyVideo(index) {
+        pauseAllExcept(String(index));
+        const container = document.querySelector(`.video-box.lazy[data-index="${index}"]`);
+        const videoId = container.dataset.id;
+        if (container && !players[index]) {
+          container.innerHTML = `
+        <div id="player${index}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></div>
+        <div class="unmute-btn-wrapper" style="position: absolute; left: 0; right: 0; bottom: 15px; display: flex; justify-content: center; z-index: 3;"></div>
+        <div class="blocker-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; background: rgba(0,0,0,0); pointer-events: auto;"></div>
+      `;
+          requestAnimationFrame(() => {
+            players[index] = new YT.Player(`player${index}`, {
+              videoId: videoId,
+              playerVars: {
+                autoplay: 1,
+                mute: 1,
+                rel: 0,
+                modestbranding: 1,
+                controls: 1,
+                playsinline: 1
               },
-              onStateChange: (event) => {
-                // 0 = ended, 2 = paused, 1 = playing
-                if (event.data === YT.PlayerState.ENDED) {
-                  showReplayButton(index);
-                } else if (event.data === YT.PlayerState.PAUSED) {
-                  // Só mostra "Repetir vídeo" se já foi dado play pelo usuário ao menos uma vez
-                  if (event.target.getCurrentTime && event.target.getCurrentTime() > 1 && firstPlay[index]) {
+              events: {
+                onReady: (event) => {
+                  const unmuteBtn = document.createElement('button');
+                  unmuteBtn.textContent = '🔊 Ativar som';
+                  unmuteBtn.setAttribute('aria-label', 'Ativar ou desativar som');
+                  unmuteBtn.style = 'background: #000; color: #FFFFFF; border: none; border-radius: 0; padding: 10px 48px; min-width: 220px; cursor: pointer; font-size: 16px; position: relative; z-index: 4;';
+                  let isMuted = true;
+                  unmuteBtn.onclick = (e) => {
+                    e.stopPropagation();
+                    if (isMuted) {
+                      event.target.unMute();
+                      event.target.seekTo(0);
+                      event.target.playVideo();
+                      unmuteBtn.textContent = '🔇 Desativar som';
+                      unmuteBtn.style.color = '#FF0000';
+                    } else {
+                      event.target.mute();
+                      unmuteBtn.textContent = '🔊 Ativar som';
+                      unmuteBtn.style.color = '#FFFFFF';
+                    }
+                    isMuted = !isMuted;
+                  };
+                  const wrapper = container.querySelector('.unmute-btn-wrapper');
+                  if (wrapper) wrapper.appendChild(unmuteBtn);
+                  event.target.playVideo();
+                  firstPlay[index] = true;
+                },
+                onStateChange: (event) => {
+                  if (event.data === YT.PlayerState.ENDED) {
                     showReplayButton(index);
+                  } else if (event.data === YT.PlayerState.PAUSED) {
+                    if (event.target.getCurrentTime && event.target.getCurrentTime() > 1 && firstPlay[index]) {
+                      showReplayButton(index);
+                    }
+                  } else if (event.data === YT.PlayerState.PLAYING) {
+                    removeReplayButton(index);
+                    pauseAllExcept(String(index));
                   }
-                } else if (event.data === YT.PlayerState.PLAYING) {
-                  removeReplayButton(index);
-                  pauseAllExcept(String(index));
                 }
               }
-            }
-
+            });
           });
-        }, 50);
-      } else if (players[index]) {
-        players[index].playVideo();
-        pauseAllExcept(String(index));
-        // Marca que o vídeo já foi iniciado pelo usuário
-        firstPlay[index] = true;
-      }
-    }
-  </script>
-
-  <!-- Top sellers -->
-  <div class="TopsellerSec pt-5 mt-3">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h2 class="headingWh mb-4">Por Que Nossos Alunos São Contratados Primeiro</h2>
-          <div class="tab-sec">
-
-            <div class="tab-content" id="nav-tabContent">
-              <div class="tab-pane fade show active" id="SellerTabOne">
-                <div class="topSellers">
-                  <ul>
-                    <li>
-                      <div class="seller">
-                        <div class="sellerLeft">
-                          <div class="sellcount">1</div>
-                          <div class="sellertitlepr">
-                            <h2>Parcerias com empresas que contratam direto da nossa escola</h2>
-
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="seller">
-                        <div class="sellerLeft">
-                          <div class="sellcount">2</div>
-
-                          <div class="sellertitlepr">
-                            <h2>Curso moldado pelas exigências reais do mercado</h2>
-
-                          </div>
-                        </div>
-
-                      </div>
-
-                      <div class="seller">
-                        <div class="sellerLeft">
-                          <div class="sellcount">3</div>
-
-                          <div class="sellertitlepr">
-                            <h2>Currículo personalizado + preparação completa para entrevistas</h2>
-
-                          </div>
-                        </div>
-
-                      </div>
-                    </li>
-
-                    <li>
-                      <div class="seller">
-                        <div class="sellerLeft">
-                          <div class="sellcount">4</div>
-
-                          <div class="sellertitlepr">
-                            <h2>Vagas com prioridade para nossos alunos indicados</h2>
-
-                          </div>
-                        </div>
-
-                      </div>
-
-                      <div class="seller">
-                        <div class="sellerLeft">
-                          <div class="sellcount">5</div>
-
-                          <div class="sellertitlepr">
-                            <h2>Resultados rápidos: alunos contratados com 1, 2 e 3 meses de curso</h2>
-
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-
-                    <li>
-
-                    </li>
-                  </ul>
-                  <button class="btn btnlightblue mt-3 d-sm-block d-md-none" id="openPopupBtn2">
-                    GARANTA AGORA A MATRÍCULA DO SEU FILHO
-                  </button>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-xl-4">
-          <div class="footsec">
-            <div class="footlogocntSec">
-              <a href="#" class="footlogo"><img class="img-fluid" src="img/cryptonlogo.svg" alt="img"></a>
-              <p>© Copyright 2025 <br> Todos os direitos reservados. </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <div id="elevator_item"><a id="elevator" onclick="return false;" title="Back To Top"></a></div>
-
-  <!-- Optional JavaScript -->
-  <script src="js/jquery-2.0.0.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/slick.js"></script>
-  <script src="js/comman.js?dfs"></script>
-
-  <script src="https://kit.fontawesome.com/c7d2131b9d.js" crossorigin="anonymous"></script>
-
-  <script>
-    // Fecha o popup (usado no botão "fechar")
-    function closePopup() {
-      document.getElementById('popupForm').style.display = 'none';
-    }
-
-    // Exibe o popup apenas ao clicar nos botões específicos
-    document.addEventListener('DOMContentLoaded', () => {
-      const openPopupBtn = document.getElementById('openPopupBtn');
-      if (openPopupBtn) {
-        openPopupBtn.addEventListener('click', function (e) {
-          e.stopPropagation();
-          document.getElementById('popupForm').style.display = 'block';
-        });
-      }
-      // Evento para o segundo botão de CTA (caso exista)
-      const openPopupBtn2 = document.getElementById('openPopupBtn2');
-      if (openPopupBtn2) {
-        openPopupBtn2.addEventListener('click', function (e) {
-          e.stopPropagation();
-          document.getElementById('popupForm').style.display = 'block';
-        });
-      }
-    });
-
-    // *** IMPORTANTE: ***
-    // O envio do formulário (function sendData) deve ser feito APENAS com o novo código do Google Sheets!
-    // Não deixe mais nada aqui além do controle do popup.
-  </script>
-
-  <script>
-    // Função de abrir/fechar popup
-    function closePopup() {
-      document.getElementById('popupForm').style.display = 'none';
-    }
-    document.addEventListener('DOMContentLoaded', () => {
-      ['openPopupBtn', 'openPopupBtn2'].forEach(function (btnId) {
-        const btn = document.getElementById(btnId);
-        if (btn) {
-          btn.addEventListener('click', function (e) {
-            e.stopPropagation();
-            document.getElementById('popupForm').style.display = 'block';
-          });
+        } else if (players[index]) {
+          players[index].playVideo();
+          pauseAllExcept(String(index));
+          firstPlay[index] = true;
         }
-      });
-    });
-
-    // Envio do formulário para o Google Sheets e redirecionamento para WhatsApp
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxHg8dYymarhjXCOaJuBVFNHjxsiR82kT7l8TD_gmF-H214SlYnnmi-JmUSMfQ6j188/exec';
-    document.getElementById('demoForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      // Força só números (defesa dupla)
-      const name = document.getElementById('name').value.trim();
-      let whatsapp = document.getElementById('whatsapp').value.replace(/[^0-9]/g, '');
-      if (whatsapp.length < 10) {
-        alert('Digite um número de WhatsApp válido (com DDD).');
-        return;
       }
+    </script>
 
-      // Prepara e envia para Google Sheets
-      const formData = new FormData();
-      formData.append('name', name);
-      formData.append('whatsapp', whatsapp);
 
-      fetch(scriptURL, { method: 'POST', body: formData })
-        .then(response => {
-          // Após salvar, redireciona para o WhatsApp da escola
-          const phoneNumber = '5516992578710';
-          const mensagem = encodeURIComponent('Tenho interesse no curso + programa de emprego para jovens');
-          window.location.href = `https://wa.me/${phoneNumber}?text=${mensagem}`;
-        })
+    <section>
+      <h2 class="section-title">Por que nossos alunos <br> são contratados primeiro</h2>
+      <ul class="benefits">
+        <li>Empresas parceiras contratam direto da nossa escola</li>
+        <li>Curso alinhado 100% com as exigências do mercado</li>
+        <li>Aulas + mentorias focadas em entrevistas reais</li>
+        <li>Vagas com prioridade para nossos indicados</li>
+        <li>Alunos contratados com 1, 2 ou 3 meses de curso</li>
+      </ul>
+    </section>
 
-        .catch(error => {
-          alert('Erro ao enviar. Tente novamente!');
-          console.error('Erro:', error);
-        });
+    <section class="cta">
+      <a href="https://api.whatsapp.com/send?phone=5516992578710" class="btn">GARANTA AGORA A MATRÍCULA DO SEU FILHO</a>
+    </section>
+  </main>
+
+  <footer style="text-align: center; padding: 30px 0;">
+    <img src="./img/sgpreto.svg" alt="Logo Santos Tech" width="140" height="auto" style="max-width: 100%; height: auto; margin-bottom: 10px;">
+    <br>
+    &copy; 2025 – Todos os direitos reservados.
+  </footer>
+  
+
+  <a href="https://api.whatsapp.com/send?phone=5516992578710&text=Tenho%20interesse%20no%20curso%20de%20tecnologia%20com%20emprego%20garantido" class="whatsapp-btn"
+    aria-label="Fale conosco no WhatsApp"></a>
+
+<!-- Modal de Formulário -->
+<div id="leadModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999; justify-content:center; align-items:center;">
+  <div style="background:#fff; padding:30px 20px; border-radius:12px; max-width:380px; width:90%; box-shadow:0 0 25px rgba(0,0,0,0.3); position:relative; text-align:center;">
+
+    <!-- Botão de Fechar -->
+    <button onclick="closeModal()" style="position:absolute; top:10px; right:15px; background:none; border:none; font-size:28px; cursor:pointer; color:#999;">&times;</button>
+
+    <h3 style="margin-bottom:25px; font-size:20px;">Antes de continuar <br> preencha os dados abaixo:</h3>
+
+    <form id="demoForm" style="display: flex; flex-direction: column; align-items: center;">
+      <label for="name" style="align-self: flex-start; font-weight: bold;">Nome</label>
+      <input id="name" name="name" type="text" required placeholder="Ex: Ana Maria"
+        maxlength="62" title="Somente letras, espaços e acentos."
+        oninput="this.value = this.value.replace(/[0-9]/g, '')"
+        style="width:100%; max-width: 320px; padding:12px; margin-bottom:18px; border:1px solid #ccc; border-radius:8px;">
+
+      <label for="whatsapp" style="align-self: flex-start; font-weight: bold;">Telefone</label>
+      <input id="whatsapp" name="whatsapp" type="tel" required placeholder="Ex: 16999999999"
+        maxlength="11" pattern="\d{11}" inputmode="numeric" title="Digite apenas 11 números (DDD + telefone)."
+        style="width:100%; max-width: 320px; padding:12px; margin-bottom:24px; border:1px solid #ccc; border-radius:8px;">
+
+      <button type="submit" class="btn-form" style="width:100%; max-width: 320px; padding:14px; background:#25D366; border:none; color:white; font-size:16px; font-weight:bold; cursor:pointer; border-radius:8px;">
+        Falar no WhatsApp
+      </button>
+    </form>
+  </div>
+</div>
+
+
+<script>
+  const modal = document.getElementById('leadModal');
+  const form = document.getElementById('demoForm');
+
+  function openModal() {
+    modal.style.display = 'flex';
+  }
+
+  function closeModal() {
+    modal.style.display = 'none';
+  }
+
+  setTimeout(openModal, 180000);
+
+  document.querySelectorAll('a.btn').forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      openModal();
     });
-  </script>
+  });
 
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxHg8dYymarhjXCOaJuBVFNHjxsiR82kT7l8TD_gmF-H214SlYnnmi-JmUSMfQ6j188/exec';
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    let whatsapp = document.getElementById('whatsapp').value.replace(/[^0-9]/g, '');
+    if (whatsapp.length < 10) {
+      alert('Digite um número de WhatsApp válido (com DDD).');
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('whatsapp', whatsapp);
+
+    fetch(scriptURL, { method: 'POST', body: formData })
+      .then(response => {
+        const phoneNumber = '5516992578710';
+        const mensagem = encodeURIComponent('Tenho interesse no curso + programa de emprego garantido.');
+        window.location.href = `https://wa.me/${phoneNumber}?text=${mensagem}`;
+      })
+      .catch(error => {
+        alert('Erro ao enviar. Tente novamente!');
+        console.error('Erro:', error);
+      });
+
+    closeModal();
+  });
+</script>
+
+
+    
 </body>
 
 </html>
