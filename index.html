@@ -185,7 +185,6 @@
       style="max-width: 100%; height: auto;">
   </header>
 
-
   <main>
     <section class="hero">
       <h1 class="hero-title">SEU FILHO NO PRIMEIRO <br> EMPREGO TECH <br><span style="color:#d9002c">OU SEU DINHEIRO DE
@@ -215,6 +214,20 @@
 
     <script async src="https://www.youtube.com/iframe_api"></script>
     <script>
+
+      function getNameFromId(id) {
+        const nomes = {
+          '0J2Vl2hlOA8': 'Daiane',
+          'fDcA05k9ywM': 'Elaine',
+          'pDM21duy0uQ': 'Fabio',
+          '9Aq5-IIvDVg': 'Ana-Julia',
+          'dHgHQENMamQ': 'Valentina',
+          'ysNRtA4zBxg': 'Sergio',
+          'v2ArrmkxohM': 'Diego'
+        };
+        return nomes[id] || 'video';
+      }
+
       const videoIds = [
         '0J2Vl2hlOA8',
         'fDcA05k9ywM',
@@ -234,7 +247,13 @@
         div.dataset.id = id;
         div.style = "position: relative; padding-bottom: 56.25%; height: 0; border-radius: 12px; overflow: hidden; background-color: black; box-shadow: 0 0 15px rgba(0,0,0,0.2); cursor: pointer;";
         div.innerHTML = `
-      <img src="https://img.youtube.com/vi/${id}/maxresdefault.jpg" onclick="loadLazyVideo(${index})"
+      <img src="./img/video0${index + 1}-${getNameFromId(id)}.webp" 
+     alt="Depoimento ${index + 1}" 
+     onclick="loadLazyVideo(${index})"
+     loading="lazy" 
+     decoding="async"
+     style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;">
+
         style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;" alt="Depoimento ${index + 1}">
       <div onclick="loadLazyVideo(${index})"
         style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2;">
@@ -363,7 +382,6 @@
       }
     </script>
 
-
     <section>
       <h2 class="section-title">Por que nossos alunos <br> são contratados primeiro</h2>
       <ul class="benefits">
@@ -386,7 +404,6 @@
     <br>
     &copy; 2025 – Todos os direitos reservados.
   </footer>
-
 
   <a href="https://api.whatsapp.com/send?phone=5516992578710&text=Tenho%20interesse%20no%20curso%20de%20tecnologia%20com%20emprego%20garantido"
     class="whatsapp-btn" aria-label="Fale conosco no WhatsApp"></a>
@@ -421,7 +438,6 @@
       </form>
     </div>
   </div>
-
 
   <script>
     const modal = document.getElementById('leadModal');
@@ -474,8 +490,6 @@
       closeModal();
     });
   </script>
-
-
 
 </body>
 
