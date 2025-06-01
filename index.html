@@ -2,16 +2,17 @@
 <html lang="pt-BR">
 
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-5BHKHC2N');</script>
+  <!-- Google Tag Manager (adiado para após o carregamento da página) -->
+  <script>
+    window.addEventListener('load', function () {
+      var gtmScript = document.createElement('script');
+      gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-5BHKHC2N';
+      gtmScript.async = true;
+      document.head.appendChild(gtmScript);
+    });
+  </script>
   <!-- End Google Tag Manager -->
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Emprego Tech Garantido | Santos Tech</title>
@@ -69,16 +70,16 @@
     }
 
     .btn {
-    background: radial-gradient(circle at center, #ff0033 0%, #c40028 100%);
-    box-shadow: 0 0 12px rgba(255, 0, 0, 0.5);
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    padding: 1em;
-    font-weight: bold;
-    text-decoration: none;
-    display: inline-block;
-  }
+      background: radial-gradient(circle at center, #ff0033 0%, #c40028 100%);
+      box-shadow: 0 0 12px rgba(255, 0, 0, 0.5);
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 1em;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+    }
 
     .section-title {
       font-size: 1.2em;
@@ -100,18 +101,18 @@
     }
 
     .benefits {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  text-align: center;
-  max-width: 320px;
-}
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      text-align: center;
+      max-width: 320px;
+    }
 
     .benefits li {
-  padding: 0.7em 0;
-  border-bottom: 1px solid #ccc;
-  font-size: 16px;
-}
+      padding: 0.7em 0;
+      border-bottom: 1px solid #ccc;
+      font-size: 16px;
+    }
 
     .cta {
       text-align: center;
@@ -139,31 +140,30 @@
     }
 
     .btn-form {
-    background: #25D366;
-    border: none;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 12px;
-    width: 100%;
-    border-radius: 6px;
-  }
+      background: #25D366;
+      border: none;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 12px;
+      width: 100%;
+      border-radius: 6px;
+    }
 
-  #leadForm input {
-    display: block;
-    margin: 0 auto 15px auto;
-    padding: 10px;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    font-size: 14px;
-  }
+    #leadForm input {
+      display: block;
+      margin: 0 auto 15px auto;
+      padding: 10px;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
 
-  #leadForm {
-    text-align: center;
-  }
-
+    #leadForm {
+      text-align: center;
+    }
   </style>
 </head>
 
@@ -174,9 +174,10 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <header style="text-align: center; padding: 20px 0;">
-    <img src="./img/sgpreto.svg" alt="Logo Santos Tech" width="180" height="auto" style="max-width: 100%; height: auto;">
+    <img src="./img/sgpreto.svg" alt="Logo Santos Tech" width="180" height="auto"
+      style="max-width: 100%; height: auto;">
   </header>
-  
+
 
   <main>
     <section class="hero">
@@ -373,98 +374,102 @@
   </main>
 
   <footer style="text-align: center; padding: 30px 0;">
-    <img src="./img/sgpreto.svg" alt="Logo Santos Tech" width="140" height="auto" style="max-width: 100%; height: auto; margin-bottom: 10px;">
+    <img src="./img/sgpreto.svg" alt="Logo Santos Tech" width="140" height="auto"
+      style="max-width: 100%; height: auto; margin-bottom: 10px;">
     <br>
     &copy; 2025 – Todos os direitos reservados.
   </footer>
-  
 
-  <a href="https://api.whatsapp.com/send?phone=5516992578710&text=Tenho%20interesse%20no%20curso%20de%20tecnologia%20com%20emprego%20garantido" class="whatsapp-btn"
-    aria-label="Fale conosco no WhatsApp"></a>
 
-<!-- Modal de Formulário -->
-<div id="leadModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999; justify-content:center; align-items:center;">
-  <div style="background:#fff; padding:30px 20px; border-radius:12px; max-width:380px; width:90%; box-shadow:0 0 25px rgba(0,0,0,0.3); position:relative; text-align:center;">
+  <a href="https://api.whatsapp.com/send?phone=5516992578710&text=Tenho%20interesse%20no%20curso%20de%20tecnologia%20com%20emprego%20garantido"
+    class="whatsapp-btn" aria-label="Fale conosco no WhatsApp"></a>
 
-    <!-- Botão de Fechar -->
-    <button onclick="closeModal()" style="position:absolute; top:10px; right:15px; background:none; border:none; font-size:28px; cursor:pointer; color:#999;">&times;</button>
+  <!-- Modal de Formulário -->
+  <div id="leadModal"
+    style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999; justify-content:center; align-items:center;">
+    <div
+      style="background:#fff; padding:30px 20px; border-radius:12px; max-width:380px; width:90%; box-shadow:0 0 25px rgba(0,0,0,0.3); position:relative; text-align:center;">
 
-    <h3 style="margin-bottom:25px; font-size:20px;">Antes de continuar <br> preencha os dados abaixo:</h3>
+      <!-- Botão de Fechar -->
+      <button onclick="closeModal()"
+        style="position:absolute; top:10px; right:15px; background:none; border:none; font-size:28px; cursor:pointer; color:#999;">&times;</button>
 
-    <form id="demoForm" style="display: flex; flex-direction: column; align-items: center;">
-      <label for="name" style="align-self: flex-start; font-weight: bold;">Nome</label>
-      <input id="name" name="name" type="text" required placeholder="Ex: Ana Maria"
-        maxlength="62" title="Somente letras, espaços e acentos."
-        oninput="this.value = this.value.replace(/[0-9]/g, '')"
-        style="width:100%; max-width: 320px; padding:12px; margin-bottom:18px; border:1px solid #ccc; border-radius:8px;">
+      <h3 style="margin-bottom:25px; font-size:20px;">Antes de continuar <br> preencha os dados abaixo:</h3>
 
-      <label for="whatsapp" style="align-self: flex-start; font-weight: bold;">Telefone</label>
-      <input id="whatsapp" name="whatsapp" type="tel" required placeholder="Ex: 16999999999"
-        maxlength="11" pattern="\d{11}" inputmode="numeric" title="Digite apenas 11 números (DDD + telefone)."
-        style="width:100%; max-width: 320px; padding:12px; margin-bottom:24px; border:1px solid #ccc; border-radius:8px;">
+      <form id="demoForm" style="display: flex; flex-direction: column; align-items: center;">
+        <label for="name" style="align-self: flex-start; font-weight: bold;">Nome</label>
+        <input id="name" name="name" type="text" required placeholder="Ex: Ana Maria" maxlength="62"
+          title="Somente letras, espaços e acentos." oninput="this.value = this.value.replace(/[0-9]/g, '')"
+          style="width:100%; max-width: 320px; padding:12px; margin-bottom:18px; border:1px solid #ccc; border-radius:8px;">
 
-      <button type="submit" class="btn-form" style="width:100%; max-width: 320px; padding:14px; background:#25D366; border:none; color:white; font-size:16px; font-weight:bold; cursor:pointer; border-radius:8px;">
-        Falar no WhatsApp
-      </button>
-    </form>
+        <label for="whatsapp" style="align-self: flex-start; font-weight: bold;">Telefone</label>
+        <input id="whatsapp" name="whatsapp" type="tel" required placeholder="Ex: 16999999999" maxlength="11"
+          pattern="\d{11}" inputmode="numeric" title="Digite apenas 11 números (DDD + telefone)."
+          style="width:100%; max-width: 320px; padding:12px; margin-bottom:24px; border:1px solid #ccc; border-radius:8px;">
+
+        <button type="submit" class="btn-form"
+          style="width:100%; max-width: 320px; padding:14px; background:#25D366; border:none; color:white; font-size:16px; font-weight:bold; cursor:pointer; border-radius:8px;">
+          Falar no WhatsApp
+        </button>
+      </form>
+    </div>
   </div>
-</div>
 
 
-<script>
-  const modal = document.getElementById('leadModal');
-  const form = document.getElementById('demoForm');
+  <script>
+    const modal = document.getElementById('leadModal');
+    const form = document.getElementById('demoForm');
 
-  function openModal() {
-    modal.style.display = 'flex';
-  }
-
-  function closeModal() {
-    modal.style.display = 'none';
-  }
-
-  setTimeout(openModal, 180000);
-
-  document.querySelectorAll('a.btn').forEach(btn => {
-    btn.addEventListener('click', function (e) {
-      e.preventDefault();
-      openModal();
-    });
-  });
-
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbxHg8dYymarhjXCOaJuBVFNHjxsiR82kT7l8TD_gmF-H214SlYnnmi-JmUSMfQ6j188/exec';
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const name = document.getElementById('name').value.trim();
-    let whatsapp = document.getElementById('whatsapp').value.replace(/[^0-9]/g, '');
-    if (whatsapp.length < 10) {
-      alert('Digite um número de WhatsApp válido (com DDD).');
-      return;
+    function openModal() {
+      modal.style.display = 'flex';
     }
 
-    const formData = new FormData();
-    formData.append('name', name);
-    formData.append('whatsapp', whatsapp);
+    function closeModal() {
+      modal.style.display = 'none';
+    }
 
-    fetch(scriptURL, { method: 'POST', body: formData })
-      .then(response => {
-        const phoneNumber = '5516992578710';
-        const mensagem = encodeURIComponent('Tenho interesse no curso + programa de emprego garantido.');
-        window.location.href = `https://wa.me/${phoneNumber}?text=${mensagem}`;
-      })
-      .catch(error => {
-        alert('Erro ao enviar. Tente novamente!');
-        console.error('Erro:', error);
+    setTimeout(openModal, 180000);
+
+    document.querySelectorAll('a.btn').forEach(btn => {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        openModal();
       });
+    });
 
-    closeModal();
-  });
-</script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxHg8dYymarhjXCOaJuBVFNHjxsiR82kT7l8TD_gmF-H214SlYnnmi-JmUSMfQ6j188/exec';
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      let whatsapp = document.getElementById('whatsapp').value.replace(/[^0-9]/g, '');
+      if (whatsapp.length < 10) {
+        alert('Digite um número de WhatsApp válido (com DDD).');
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('whatsapp', whatsapp);
+
+      fetch(scriptURL, { method: 'POST', body: formData })
+        .then(response => {
+          const phoneNumber = '5516992578710';
+          const mensagem = encodeURIComponent('Tenho interesse no curso + programa de emprego garantido.');
+          window.location.href = `https://wa.me/${phoneNumber}?text=${mensagem}`;
+        })
+        .catch(error => {
+          alert('Erro ao enviar. Tente novamente!');
+          console.error('Erro:', error);
+        });
+
+      closeModal();
+    });
+  </script>
 
 
-    
+
 </body>
 
 </html>
