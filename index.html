@@ -178,6 +178,18 @@
       max-width: 100%;
       height: auto;
     }
+
+    #vagas-num {
+      background: #fff;
+      color: #e4032b;
+      border-radius: 8px;
+      padding: 4px 18px;
+      font-size: 1.5em;
+      font-weight: 900;
+      box-shadow: 0 2px 8px #c3c3c34c;
+      margin: 0 8px;
+      letter-spacing: 0.5px;
+    }
   </style>
 </head>
 
@@ -190,6 +202,14 @@
   <header style="text-align: center; padding: 20px 0;">
     <img src="./img/sgpreto.svg" alt="Logo Santos Tech" class="logo" width="180" height="60">
   </header>
+
+  <div id="vagas-barra"
+    style="width:100%;background:#e4032b;color:#fff;text-align:center;padding:8px 0;font-weight:600;font-size:1.1rem;letter-spacing:1px;border-radius:8px 8px 0 0;display:flex;justify-content:center;align-items:center;gap:10px;">
+    <span>Últimas</span>
+    <span id="vagas-num"
+      style="background:#fff;color:#e4032b;border-radius:8px;padding:4px 18px;font-size:1.5em;font-weight:900;box-shadow:0 2px 8px #c3c3c34c;">13</span>
+    <span>vagas para o programa <br>de emprego garantido</span>
+  </div>
 
   <main>
     <section class="hero">
@@ -496,6 +516,77 @@
 
       closeModal();
     });
+  </script>
+
+  <script>
+    (function () {
+      const VAGAS_KEY = 'vagas_sgtech';
+      const DATA_KEY = 'vagas_data_sgtech';
+      const DROPS_KEY = 'vagas_hoje_drops_sgtech';
+      const MIN_VAGAS = 1;
+      const VAGAS_INICIAL = 13;
+
+      const vagasEl = document.getElementById('vagas-num');
+
+      // Helpers
+      function getToday() {
+        const today = new Date();
+        return today.toISOString().slice(0, 10); // 'YYYY-MM-DD'
+      }
+
+      // Inicializar dados no localStorage se não existem
+      function initStorage() {
+        if (!localStorage.getItem(VAGAS_KEY)) localStorage.setItem(VAGAS_KEY, VAGAS_INICIAL);
+        if (!localStorage.getItem(DATA_KEY)) localStorage.setItem(DATA_KEY, getToday());
+        if (!localStorage.getItem(DROPS_KEY)) localStorage.setItem(DROPS_KEY, '0');
+      }
+
+      function resetDropsIfDayChanged() {
+        const lastDate = localStorage.getItem(DATA_KEY);
+        const today = getToday();
+        if (lastDate !== today) {
+          localStorage.setItem(DATA_KEY, today);
+          localStorage.setItem(DROPS_KEY, '0');
+        }
+      }
+
+      function atualizarBarra() {
+        vagasEl.textContent = localStorage.getItem(VAGAS_KEY) || VAGAS_INICIAL;
+      }
+
+      function decrementarVaga() {
+        let vagas = parseInt(localStorage.getItem(VAGAS_KEY), 10) || VAGAS_INICIAL;
+        if (vagas > MIN_VAGAS) {
+          vagas -= 1;
+          localStorage.setItem(VAGAS_KEY, vagas);
+          atualizarBarra();
+        }
+      }
+
+      // Lógica do timer de queda de vagas
+      function iniciarTimerQueda() {
+        let drops = parseInt(localStorage.getItem(DROPS_KEY), 10) || 0;
+        const nextDropInMin = drops + 1; // 1º drop: 1min, 2º: 2min, etc
+
+        setTimeout(() => {
+          let vagas = parseInt(localStorage.getItem(VAGAS_KEY), 10) || VAGAS_INICIAL;
+          if (vagas > MIN_VAGAS) {
+            decrementarVaga();
+            drops += 1;
+            localStorage.setItem(DROPS_KEY, drops);
+            // Se quiser, pode rodar o próximo timer automaticamente aqui:
+            // iniciarTimerQueda();
+          }
+        }, nextDropInMin * 60 * 1000); // minutos -> ms
+      }
+
+      // ----------- EXECUÇÃO PRINCIPAL -----------
+      initStorage();
+      resetDropsIfDayChanged();
+      atualizarBarra();
+      iniciarTimerQueda();
+
+    })();
   </script>
 
 </body>
