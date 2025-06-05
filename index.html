@@ -39,7 +39,7 @@
     body {
       margin: 0;
       font-family: sans-serif;
-      background: #fff;
+      background: #f8f9fa;
       color: #111;
       line-height: 1.5;
     }
@@ -190,6 +190,52 @@
       margin: 0 8px;
       letter-spacing: 0.5px;
     }
+
+    .secao-identificacao {
+      background: linear-gradient(to bottom, #fdfdfd, #fbdcdc);
+      background-size: cover;
+      /* cobre toda a área */
+      background-position: center;
+      /* centraliza o fundo */
+      background-repeat: no-repeat;
+      /* não repete */
+      /* Outras propriedades já existentes, se necessário */
+      border-radius: 12px;
+      /* opcional: borda arredondada */
+      /* Exemplo de padding, caso queira espaçamento interno */
+      padding: 24px 16px;
+      border-top: 2px solid #d0d0d0;
+      /* linha superior */
+      border-bottom: 2px solid #d0d0d0;
+      /* linha inferior */
+    }
+
+    .secao-sistema {
+      background-color: #fef6f6;
+      /* Ou um gradiente */
+      /* background: linear-gradient(135deg, #f8fafc, #f3f4f8); */
+      border-radius: 12px;
+      margin-top: 28px;
+      margin-bottom: 28px;
+      /* Pode colocar mais padding/margin se quiser */
+    }
+
+    .conteudo-sistema {
+      max-width: 370px;
+      /* ou 90% no mobile, 420px no desktop, ajuste à vontade */
+      margin: 0 auto;
+      /* centraliza */
+      padding: 0 18px;
+      /* cria espaço nas laterais em telas pequenas */
+    }
+
+    .sessao-cta {
+      padding: 40px 16px;
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: #fff7f7;
+      border-radius: 12px;
+    }
   </style>
 </head>
 
@@ -213,21 +259,95 @@
 
   <main>
     <section class="hero">
-      <h1 class="hero-title">SEU FILHO NO PRIMEIRO <br> EMPREGO TECH <br><span style="color:#d9002c">OU SEU DINHEIRO DE
-          VOLTA</span></h1>
+      <h1 class="hero-title">SEU FILHO AINDA NÃO SABE <br> O QUE VAI FAZER DA VIDA?<br><span style="color:#d9002c">DÊ A
+          ELE UM FUTURO REAL <br> COM TECNOLOGIA E PROPÓSITO.</span></h1>
       <p class="subheadline">
-        <span style="color:#d9002c;">Mais que um curso:</span> o caminho mais rápido para o primeiro emprego em
-        tecnologia, direto de Ribeirão Preto.
+        Formação prática + <br> Empresas parceiras + <br> Garantia de emprego <span style="color:#ff0000;">ou</span><br>
+        devolvemos 100% do investimento.
       </p>
 
-      <a href="https://api.whatsapp.com/send?phone=5516992578710" class="btn">GARANTA AGORA <br> A MATRÍCULA DO SEU
-        FILHO</a>
+      <div class="form-fixo-container"
+        style="max-width: 500px; margin: 24px auto; background: #d0d0d0; padding: 24px; border-radius: 12px; box-shadow: 0 4px 20px #00000018;">
+        <p style="text-align: center; font-size: 1.05em; margin-bottom: 20px;">
+          👇 Preencha para garantir a vaga do seu filho e falar com a escola:
+        </p>
+
+        <form id="formFixo" style="display: flex; flex-direction: column; align-items: center;">
+          <label for="nomeFixo" style="align-self: flex-start; font-weight: bold;">Nome</label>
+          <input id="nomeFixo" name="name" type="text" required placeholder="Ex: Ana Maria" maxlength="62"
+            title="Somente letras, espaços e acentos." oninput="this.value = this.value.replace(/[0-9]/g, '')"
+            style="font-size: 16px; width:100%; padding:12px; margin-bottom:18px; border:1px solid #ccc; border-radius:8px;">
+
+          <label for="whatsappFixo" style="align-self: flex-start; font-weight: bold;">Telefone</label>
+          <input id="whatsappFixo" name="whatsapp" type="tel" required placeholder="Ex: 16999999999" maxlength="11"
+            pattern="\d{11}" inputmode="numeric" title="Digite apenas 11 números (DDD + telefone)."
+            style="font-size: 16px; width:100%; padding:12px; margin-bottom:24px; border:1px solid #ccc; border-radius:8px;">
+
+          <button type="submit" class="btn-form-fixo"
+            style="width:100%; padding:14px; background:#25D366; border:none; color:white; font-size:16px; font-weight:bold; cursor:pointer; border-radius:8px;">
+            Quero conversar com a escola
+          </button>
+        </form>
+      </div>
     </section>
 
-    <section style="background-color: #ffffff; padding: 5px 20px;">
+    <section class="secao-identificacao" style="max-width: 900px; margin: 0 auto;">
+      <div style="text-align: center;">
+        <h2 style="font-size: 1.8em; font-weight: bold; margin-bottom: 24px; color: #333;">
+          Hoje, milhares de jovens terminam o ensino médio sem direção.
+        </h2>
+
+        <p style="font-size: 1.3em; line-height: 1.6; color: #333333; margin-bottom: 16px;">
+          Não sabem o que querem. <br> Não se sentem prontos.
+        </p>
+        <p style="font-size: 1.3em; line-height: 1.6; color: #333333; margin-bottom: 24px;">
+          E os pais... muitas vezes <br> não sabem como ajudar.
+        </p>
+
+        <p style="font-size: 1.2em; font-weight: bold; color: #e4032b; margin-bottom: 16px;">
+          A boa notícia? Existe um caminho real.
+        </p>
+
+        <p style="font-size: 1.1em; line-height: 1.6; color: #333333;">
+          Um caminho que conecta <strong>educação com empregabilidade</strong>.<br>
+          Que prepara de verdade.<br>
+          Que entrega resultado.
+        </p>
+      </div>
+    </section>
+
+    <section class="secao-sistema" style="padding: 10px 16px; max-width: 900px; margin: 0 auto;">
+      <div class="conteudo-sistema">
+        <div style="text-align: center;">
+          <h2 style="font-size: 1.8em; font-weight: bold; color: #333; margin-bottom: 24px;">
+            A Solução: Sistema de Empregabilidade Ativa
+          </h2>
+          <p style="font-size: 1.10em; color: #555; line-height: 1.6; margin-bottom: 20px;">
+            Na Escola Santos Tech, desenvolvemos um método que <strong>ensina o que as empresas realmente
+              exigem</strong>.
+            O aluno aprende e já sai pronto para o mercado de trabalho.
+          </p>
+
+          <ul
+            style="list-style: none; padding: 0; font-size: 1.10em; color: #444; text-align: left; max-width: 600px; margin: 0 auto;">
+            <li style="margin-bottom: 12px;">✅ Ensino prático com foco em tecnologia</li>
+            <li style="margin-bottom: 12px;">✅ Criação de currículo profissional</li>
+            <li style="margin-bottom: 12px;">✅ Simulações de entrevistas e postura profissional</li>
+            <li style="margin-bottom: 12px;">✅ Parcerias com empresas que contratam direto da escola</li>
+            <li style="margin-bottom: 12px;">✅ Indicação prioritária para vagas reais</li>
+          </ul>
+
+          <p style="font-size: 1.1em; font-weight: bold; color: #e4032b; margin-top: 28px;">
+            E o melhor: se ele seguir o método e não for contratado,<br> devolvemos 100% do valor investido.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section style="background-color: #f0f4f8; padding: 5px 20px;">
       <div style="max-width: 1200px; margin: 0 auto;">
-        <h2 style="color: rgb(0, 0, 0); font-size: 28px; text-align: center; margin-top: -0.4em; margin-bottom: 30px;">
-          Veja o que os pais dizem <br> sobre a transformação <br> dos seus filhos
+        <h2 style="color: rgb(0, 0, 0); font-size: 22px; text-align: center; margin-top: 20px; margin-bottom: 20px;">
+          O QUE OS PAIS ESTÃO DIZENDO:
         </h2>
         <div id="video-wrapper" style="display: flex; flex-direction: column; gap: 40px;">
           <!-- Todos os vídeos com lazy loading -->
@@ -409,20 +529,83 @@
       }
     </script>
 
-    <section>
-      <h2 class="section-title">Por que nossos alunos <br> são contratados primeiro</h2>
-      <ul class="benefits">
-        <li>Empresas parceiras contratam direto da nossa escola</li>
-        <li>Curso alinhado 100% com as exigências do mercado</li>
-        <li>Aulas + mentorias focadas em entrevistas reais</li>
-        <li>Vagas com prioridade para nossos indicados</li>
-        <li>Alunos contratados com 1, 2 ou 3 meses de curso</li>
-      </ul>
+    <section style="background-color: #fff3f3; padding: 32px 16px; max-width: 900px; margin: 0 auto; border-top: 2px solid #d0d0d0;
+      border-bottom: 2px solid #d0d0d0;">
+      <h2 style="text-align: center; font-size: 1.6em; font-weight: bold; color: #111; margin-bottom: 34px; margin-top: 20px;">
+        Por que nossos alunos <br> são contratados primeiro
+      </h2>
+
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div
+          style="background: #ffc0c0; border-radius: 12px; padding: 16px; text-align: center; font-size: 1.20em; color: #000000;">
+          Empresas parceiras contratam <br> direto da nossa escola
+        </div>
+        <div
+          style="background: #ffc0c0; border-radius: 12px; padding: 16px; text-align: center; font-size: 1.20em; color: #000000;">
+          Curso alinhado 100% <br> com as exigências do mercado
+        </div>
+        <div
+          style="background: #ffc0c0; border-radius: 12px; padding: 16px; text-align: center; font-size: 1.20em; color: #000000;">
+          Aulas + mentorias <br> focadas em entrevistas reais
+        </div>
+        <div
+          style="background: #ffc0c0; border-radius: 12px; padding: 16px; text-align: center; font-size: 1.20em; color: #000000;">
+          Vagas com prioridade <br> para nossos alunos indicados
+        </div>
+        <div
+          style="background: #ffc0c0; border-radius: 12px; padding: 16px; text-align: center; font-size: 1.20em; color: #000000; margin-bottom: 34px;">
+          Alunos contratados com <br> 1, 2 ou 3 meses de curso
+        </div>
+      </div>
     </section>
 
-    <section class="cta">
-      <a href="https://api.whatsapp.com/send?phone=5516992578710" class="btn">GARANTA AGORA A MATRÍCULA DO SEU FILHO</a>
+    <section class="sessao-cta"
+      style="padding: 40px 16px; margin: 0 auto; background-color: #f0f8f5; border-radius: 12px;">
+      <div style="text-align: center;">
+        <h2 style="font-size: 1.6em; font-weight: bold; color: #e4032b; margin-bottom: 16px;">
+          ⚠️ Últimas Vagas Disponíveis
+        </h2>
+
+        <p style="font-size: 1.1em; color: #444; margin-bottom: 16px; line-height: 1.6;">
+          As vagas são limitadas porque o <br> acompanhamento é personalizado.<br>
+          Nossos parceiros esperam qualidade <br> — e a gente entrega.
+        </p>
+
+        <p style="font-size: 1.2em; font-weight: bold; color: #111; margin: 24px 0;">
+          🔥 Restam poucas vagas <br> para a última turma do ano
+        </p>
+
+        <p style="font-size: 1.05em; color: #444; margin-bottom: 28px;">
+          Garanta agora o contato com nossa equipe <br> enquanto ainda dá tempo:
+        </p>
+      </div>
+      <div style="text-align: center; margin-bottom: 24px;">
+        <h2 style="font-size: 1.6em; font-weight: bold; color: #1b4332; margin-bottom: 12px;">
+          Transforme o futuro do seu filho
+        </h2>
+        <p style="font-size: 1.1em; color: #333;">
+          Basta um passo. <br> E esse passo começa aqui.
+        </p>
+      </div>
+
+      <form id="formFinalCTA" style="display: flex; flex-direction: column; gap: 16px;"
+        onsubmit="enviarFormFinal(event)">
+        <input type="text" id="nomeFinal" name="name" placeholder="Ex: Ana Maria" maxlength="62"
+          oninput="this.value = this.value.replace(/[0-9]/g, '')" required
+          style="padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1em;">
+
+        <input type="tel" id="whatsappFinal" name="whatsapp" placeholder="Ex: 16999999999" maxlength="11"
+          pattern="\d{11}" inputmode="numeric" required
+          style="padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1em;">
+
+        <button type="submit"
+          style="padding: 14px; background-color: #25D366; color: white; font-size: 1.1em; font-weight: bold; border: none; border-radius: 8px; cursor: pointer;">
+          Quero garantir meu atendimento ✅
+        </button>
+      </form>
     </section>
+
+
   </main>
 
   <footer style="text-align: center; padding: 30px 0;">
@@ -587,6 +770,79 @@
       iniciarTimerQueda();
 
     })();
+  </script>
+
+  <script>
+    const formFixo = document.getElementById('formFixo');
+    const scriptURLFixo = 'https://script.google.com/macros/s/AKfycbxHg8dYymarhjXCOaJuBVFNHjxsiR82kT7l8TD_gmF-H214SlYnnmi-JmUSMfQ6j188/exec';
+
+    formFixo.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const nome = document.getElementById('nomeFixo').value.trim();
+      let whatsapp = document.getElementById('whatsappFixo').value.replace(/[^0-9]/g, '');
+
+      if (!nome || whatsapp.length < 10) {
+        alert('Por favor, preencha os dados corretamente.');
+        return;
+      }
+
+      // Disparar evento para o GTM
+      if (typeof dataLayer !== "undefined") {
+        dataLayer.push({ event: "forms" });
+      }
+
+      const formData = new FormData();
+      formData.append('name', nome);
+      formData.append('whatsapp', whatsapp);
+
+      fetch(scriptURLFixo, { method: 'POST', body: formData })
+        .then(response => {
+          const phoneNumber = '5516992578710';
+          const mensagem = encodeURIComponent('Tenho interesse no curso + programa de emprego garantido');
+          window.location.href = `https://wa.me/${phoneNumber}?text=${mensagem}`;
+        })
+        .catch(error => {
+          alert('Erro ao enviar. Tente novamente!');
+          console.error('Erro:', error);
+        });
+    });
+  </script>
+
+  <script>
+    const formCTA = document.getElementById('formFinalCTA');
+    const scriptURLCTA = 'https://script.google.com/macros/s/AKfycbxHg8dYymarhjXCOaJuBVFNHjxsiR82kT7l8TD_gmF-H214SlYnnmi-JmUSMfQ6j188/exec';
+
+    function enviarFormFinal(event) {
+      event.preventDefault();
+
+      const nome = document.getElementById('nomeFinal').value.trim();
+      let whatsapp = document.getElementById('whatsappFinal').value.replace(/[^0-9]/g, '');
+
+      if (!nome || whatsapp.length < 10) {
+        alert('Por favor, preencha os dados corretamente.');
+        return;
+      }
+
+      if (typeof dataLayer !== "undefined") {
+        dataLayer.push({ event: "forms" });
+      }
+
+      const formData = new FormData();
+      formData.append('name', nome);
+      formData.append('whatsapp', whatsapp);
+
+      fetch(scriptURLCTA, { method: 'POST', body: formData })
+        .then(response => {
+          const phoneNumber = '5516992578710';
+          const mensagem = encodeURIComponent('Tenho interesse no curso + programa de emprego garantido.');
+          window.location.href = `https://wa.me/${phoneNumber}?text=${mensagem}`;
+        })
+        .catch(error => {
+          alert('Erro ao enviar. Tente novamente!');
+          console.error('Erro:', error);
+        });
+    }
   </script>
 
 </body>
