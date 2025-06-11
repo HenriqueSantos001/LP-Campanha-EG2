@@ -52,7 +52,7 @@
     }
 
     .hero {
-      padding: 2em 1em;
+      padding: 0.5em 0.5em;
       text-align: center;
       min-height: 320px;
       /* altura mínima para prevenir shift */
@@ -60,6 +60,13 @@
 
     .hero-title {
       font-size: 2.2em;
+      font-family: 'Anton', sans-serif;
+      font-weight: 400;
+      margin-bottom: 0.5em;
+    }
+
+    .hero-title2 {
+      font-size: 1.6em;
       font-family: 'Anton', sans-serif;
       font-weight: 400;
       margin-bottom: 0.5em;
@@ -136,7 +143,7 @@
 
     .subheadline {
       font-weight: bold;
-      font-size: 1.15em;
+      font-size: 1.18em;
       /* opcional, se quiser dar uma leve destacada */
     }
 
@@ -251,15 +258,17 @@
   </header>
 
   <div id="vagas-barra"
-    style="width:100%;background:#e4032b;color:#fff;text-align:center;padding:8px 0;font-weight:600;font-size:1.1rem;letter-spacing:1px;border-radius:8px 8px 0 0;display:flex;justify-content:center;align-items:center;gap:10px;">
-    <span>Últimas</span>
-    <span id="vagas-num"
-      style="background:#fff;color:#e4032b;border-radius:8px;padding:4px 18px;font-size:1.5em;font-weight:900;box-shadow:0 2px 8px #c3c3c34c;">13</span>
-    <span>vagas para o programa <br>de emprego garantido</span>
-  </div>
+  style="width:100%;background:#000000;color:#fff;text-align:center;padding:8px 0;font-weight:600;font-size:1.1rem;letter-spacing:1px;border-radius:8px 8px 0 0;display:flex;justify-content:center;align-items:center;gap:10px;">
+  <span>⚠️ Inscrições até</span>
+  <span
+    style="background:#fff;color:#e4032b;border-radius:8px;padding:4px 18px;font-size:1.0em;font-weight:900;box-shadow:0 2px 8px #c3c3c34c;">16/06</span> <span>📍 Ribeirão Preto</span>
+</div>
+
 
   <main>
     <section class="hero">
+
+      <h1 class="hero-title2">O QUE AS EMPRESAS MAIS EXIGENTES <br> ESTÃO COBRANDO DOS JOVENS<br><span style="color:#d9002c">E POR QUE SEU FILHO <br> PODE ESTAR FICANDO PRA TRÁS</span></h1>
 
       <div id="vsl-container"
         style="max-width:600px;margin:32px auto 0 auto;border-radius:14px;overflow:hidden;box-shadow:0 4px 20px #0001;position:relative;">
@@ -855,7 +864,7 @@
 
         <button type="submit" class="btn-form"
           style="width:100%; max-width: 320px; padding:14px; background:#25D366; border:none; color:white; font-size:16px; font-weight:bold; cursor:pointer; border-radius:8px;">
-          Falar no WhatsApp
+          Quero conversar com a escola
         </button>
       </form>
     </div>
