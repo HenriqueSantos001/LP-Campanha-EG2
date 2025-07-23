@@ -7,7 +7,14 @@ document.addEventListener("DOMContentLoaded", () => {
     let slides = [];
     let totalSlides = baseSlides.length;
     let currentIndex = 0;
-    let isMobile = false;
+
+    let isMobile = null;
+
+    const isReallyMobile = () => {
+        const widthCheck = window.innerWidth <= 700;
+        const uaCheck = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        return widthCheck || uaCheck;
+    };
 
     const setupMobileCarousel = () => {
         carousel.innerHTML = '';
@@ -27,6 +34,30 @@ document.addEventListener("DOMContentLoaded", () => {
         slides = Array.from(carousel.children);
         currentIndex = totalSlides;
         updatePosition(false);
+
+        prevBtn.style.display = 'flex';
+        nextBtn.style.display = 'flex';
+
+        carousel.addEventListener('touchstart', onTouchStart, { passive: true });
+        carousel.addEventListener('touchmove', onTouchMove, { passive: true });
+        carousel.addEventListener('touchend', onTouchEnd, { passive: true });
+    };
+
+    const teardownMobileCarousel = () => {
+        carousel.innerHTML = '';
+        baseSlides.forEach(slide => {
+            slide.classList.remove('clone');
+            carousel.appendChild(slide);
+        });
+
+        prevBtn.style.display = 'none';
+        nextBtn.style.display = 'none';
+        carousel.style.transform = 'none';
+        carousel.style.transition = 'none';
+
+        carousel.removeEventListener('touchstart', onTouchStart);
+        carousel.removeEventListener('touchmove', onTouchMove);
+        carousel.removeEventListener('touchend', onTouchEnd);
     };
 
     const updatePosition = (animate = true) => {
@@ -84,38 +115,21 @@ document.addEventListener("DOMContentLoaded", () => {
         startX = 0; deltaX = 0;
     };
 
-    const handleResize = () => {
-        const nowMobile = window.innerWidth <= 700;
-        if (nowMobile !== isMobile) {
-            isMobile = nowMobile;
+    const checkAndUpdateMode = () => {
+        const nowMobile = isReallyMobile();
 
-            if (isMobile) {
-                setupMobileCarousel();
-                prevBtn.style.display = 'flex';
-                nextBtn.style.display = 'flex';
-                carousel.addEventListener('touchstart', onTouchStart, { passive: true });
-                carousel.addEventListener('touchmove', onTouchMove, { passive: true });
-                carousel.addEventListener('touchend', onTouchEnd, { passive: true });
-            } else {
-                carousel.innerHTML = '';
-                baseSlides.forEach(slide => {
-                    slide.classList.remove('clone');
-                    carousel.appendChild(slide);
-                });
-                prevBtn.style.display = 'none';
-                nextBtn.style.display = 'none';
-                carousel.style.transform = 'none';
-                carousel.style.transition = 'none';
-                carousel.removeEventListener('touchstart', onTouchStart);
-                carousel.removeEventListener('touchmove', onTouchMove);
-                carousel.removeEventListener('touchend', onTouchEnd);
-            }
+        if (nowMobile && isMobile !== true) {
+            isMobile = true;
+            setupMobileCarousel();
+        } else if (!nowMobile && isMobile !== false) {
+            isMobile = false;
+            teardownMobileCarousel();
         }
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', checkAndUpdateMode);
     prevBtn.addEventListener('click', prevSlide);
     nextBtn.addEventListener('click', nextSlide);
 
-    handleResize();
+    checkAndUpdateMode();
 });
